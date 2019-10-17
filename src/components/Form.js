@@ -19,6 +19,14 @@ const UserForm = ({ values, touched, errors, status }) => {
                 {touched.name && errors.name && (
                     <p className='error'>{errors.name}</p>
                 )}
+                <Field className='input' component='select' name='role'>
+                    <option>Select Role</option>
+                    <option value='frontend'>Front-End Developer</option>
+                    <option value='backend'>Back-End Developer</option>
+                </Field>
+                {touched.role && errors.role && (
+                    <p className='error'>{errors.role}</p>
+                )}
                 <Field className='input' type='text' name='email' placeholder='Email' />
                 {touched.email && errors.email && (
                     <p className='error'>{errors.email}</p>
@@ -38,8 +46,10 @@ const UserForm = ({ values, touched, errors, status }) => {
                 {users.map(el => (
                     <div className='displayInfo'>
                         <p><strong>Name:</strong> {el.name}</p>
+                        <p><strong>Role:</strong> {el.role}</p>
                         <p><strong>Email:</strong> {el.email}</p>
                         <p><strong>Password:</strong> {el.password}</p>
+                        
                     </div>
                 ))}
             </div>
@@ -48,11 +58,12 @@ const UserForm = ({ values, touched, errors, status }) => {
 };
 
 const FormikUserForm = withFormik({
-    mapPropsToValues({ name, email, password, terms }) {
+    mapPropsToValues({ name, email, password, role, terms }) {
         return {
             name: name || '',
             email: email || '',
             password: password || '',
+            role: role || '',
             terms: terms || false
         }
     },
@@ -60,7 +71,8 @@ const FormikUserForm = withFormik({
     validationSchema: Yup.object().shape({
         name: Yup.string().required('*Name required*'),
         email: Yup.string().required('*Email required*'),
-        password: Yup.string().required('*Password required*')
+        password: Yup.string().required('*Password required*'),
+        role: Yup.string().oneOf(['frontend', 'backend']).required()
     }),
 
     handleSubmit(values, {setStatus}) {

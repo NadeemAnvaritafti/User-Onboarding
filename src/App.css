@@ -42,14 +42,13 @@
 
 .input {
   background: rgba(199, 147, 98, 0.788);
-  border: none;
+  border: 2px solid rgba(199, 147, 98, 0.788);
+  border-radius: 10px;
   margin: 1%;
   height: 30px;
   color: white;
   padding-left: 4.5%;
 }
-
-
 
 .terms {
   display: flex;
