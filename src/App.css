@@ -1,0 +1,80 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(196, 191, 191, 0.808);
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-top: 5%;
+}
+
+.displayInfoContainer {
+  margin-top: 3%;
+  width: 50%;
+}
+
+.displayInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  margin-top: 5%;
+  border-radius: 30px;
+  padding-left: 5%;
+  padding-right: 5%;
+  background: #E8F0FE;
+  box-shadow: 0 4px 8px 0 rgba(199, 147, 98, 0.788);
+}
+
+.input {
+  background: rgba(199, 147, 98, 0.788);
+  border: 2px solid rgba(199, 147, 98, 0.788);
+  border-radius: 10px;
+  margin: 1%;
+  height: 30px;
+  color: white;
+  padding-left: 4.5%;
+}
+
+.terms {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  font-size: .75rem;
+  align-items: center;
+}
+
+.error {
+  color: rgba(255, 0, 0, 0.747);
+  font-size: .75rem;
+}
+
+button {
+  border: 2px solid rgba(199, 147, 98, 0.788);;
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+  background: rgba(199, 147, 98, 0.788);
+}
+
+button:hover {
+  background: white;
+  border: 2px solid rgba(199, 147, 98, 0.788);
+  cursor: pointer;
+  color: rgba(199, 147, 98, 0.788);
+}
+
